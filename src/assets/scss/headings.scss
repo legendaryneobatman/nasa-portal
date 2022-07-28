@@ -1,0 +1,53 @@
+@mixin font {
+  font-family: 'Kanit', sans-serif;
+}
+
+@mixin font-logo {
+  font-size: 24px;
+  font-weight: bold;
+  @include font();
+}
+
+@mixin font-h1($weight: bold) {
+  font-size: 48px;
+  font-weight: $weight;
+  @include font();
+}
+@mixin font-h2($weight: bold) {
+  font-size: 40px;
+  font-weight: $weight;
+  @include font();
+}
+@mixin font-h3($weight: bold) {
+  font-size: 32px;
+  font-weight: $weight;
+  @include font();
+}
+@mixin font-h4($weight: bold) {
+  font-size: 24px;
+  font-weight: $weight;
+  @include font();
+}
+@mixin font-h5($weight: bold) {
+  font-size: 16px;
+  font-weight: $weight;
+  @include font();
+}
+@mixin font-body($weight: 400) {
+  font-size: 14px;
+  font-weight: $weight;
+  @include font();
+}
+
+@mixin font-caption($weight: 300) {
+  font-size: 14px;
+  font-weight: $weight;
+  text-shadow:
+          0.07em 0 black,
+          0 0.07em black,
+          -0.07em 0 black,
+          0 -0.07em black;
+  color: white;
+  opacity: 20%;
+  @include font();
+}
