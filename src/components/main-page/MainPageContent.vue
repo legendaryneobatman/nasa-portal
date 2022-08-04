@@ -10,7 +10,7 @@
 <script>
 import { defineComponent } from 'vue'
 
-import MainPagePreview from '@/components/MainPage/MainPagePreview'
+import MainPagePreview from '@/components/main-page/MainPagePreview'
 
 /**
  * Компонент контент главной страницы
