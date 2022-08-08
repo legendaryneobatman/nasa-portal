@@ -24,7 +24,8 @@
       </vue-container>
     </section>
     <section class="gallery">
-      <picture-gallery :media-gallery="formattedMediaGallery" />
+      <span class="gallery__title">Browse more cosmic photos</span>
+      <picture-gallery :media-gallery="mediaGallery" />
     </section>
   </article>
 </template>
@@ -51,15 +52,9 @@ export default defineComponent({
   components: { PictureGallery, VueLoader, VueContainer, MainPageContent, PictureInfo, PictureDisplay },
   data: () => ({
     mediaData: null as IMediaData | null,
-    mediaGallery: null as IMediaData[] | null,
+    mediaGallery: [] as IMediaData[] | null,
     isLoading: true
   }),
-  computed: {
-    formattedMediaGallery () {
-      if (this.mediaGallery === null) return []
-      return this.mediaGallery.map(({ url }) => (url))
-    }
-  },
   created () {
     this.getMediaData()
     this.getMediaGallery()
@@ -80,6 +75,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+  section {
+    padding-top: 48px;
+  }
+
   .section {
     height: 100vh;
   }
@@ -101,6 +100,11 @@ export default defineComponent({
   }
 
   .gallery {
+    background-color: map-get($grey, "200");
     height: 600px;
+
+    &__title {
+      @include font-h2()
+    }
   }
 </style>

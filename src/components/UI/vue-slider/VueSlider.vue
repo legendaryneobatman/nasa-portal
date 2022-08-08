@@ -1,5 +1,4 @@
 <template>
-  <!-- Slideshow container -->
   <div ref="slider" class="slider">
     <div class="slider__count">{{`${activeSlideIndex}/${gallery?.length}`}}</div>
     <div
@@ -8,6 +7,7 @@
       :style="{ transform: `translateX(${translateX})` }"
     >
       <vue-slider-item
+        ref="sliderItem"
         v-for="picture in gallery"
         :key="picture"
         :image="picture"
@@ -15,14 +15,13 @@
         :style="{ width: `${containerWidth}px` }"
       />
     </div>
-
-    <!-- Next and previous buttons -->
     <a class="prev" @click="prevSlide">&#10094;</a>
     <a class="next" @click="nextSlide">&#10095;</a>
   </div>
-
-  <!-- The dots/circles -->
   <div class="dots">
+    <slot
+      name="picture-info"
+    />
     <span
       class="dots__item"
       v-for="(dot, dotIndex) in gallery"
@@ -30,6 +29,7 @@
       @click="selectSlide(dotIndex + 1)"
     />
   </div>
+  .
 </template>
 
 <script lang="ts">
