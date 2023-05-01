@@ -1,15 +1,11 @@
 <template>
-  <page-header title="nasa-portal"/>
-  <router-view/>
+  <v-app id="inspire">
+    <app-layout />
+  </v-app>
 </template>
 
-<script>
-import PageHeader from '@/components/PageHeader'
-export default {
-  components: {
-    PageHeader
-  }
-}
+<script setup lang="ts">
+import AppLayout from '@/layouts/AppLayout.vue'
 </script>
 
 <style>

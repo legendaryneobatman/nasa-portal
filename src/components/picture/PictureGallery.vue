@@ -8,12 +8,10 @@
 import { defineComponent, PropType } from 'vue'
 import VueSlider from '@/components/UI/vue-slider/VueSlider.vue'
 import { IMediaData } from '@/types/API/media'
-import VueLoader from '@/components/UI/VueLoader.vue'
-import PictureInfo from '@/components/picture/PictureInfo.vue'
 
 export default defineComponent({
   name: 'PictureGallery',
-  components: { PictureInfo, VueLoader, VueSlider },
+  components: { VueSlider },
   props: {
     mediaGallery: { type: Array as PropType<IMediaData[]> | [] }
   },

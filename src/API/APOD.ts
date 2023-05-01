@@ -12,7 +12,7 @@ axiosInstance.interceptors.request.use((request) => {
   return request
 }, (error) => Promise.reject(error))
 
-export const MediaOfDay = async (): Promise<IMediaData> => {
+export const fetchMediaOfDay = async (): Promise<IMediaData> => {
   try {
     const { data } = await axiosInstance.get('/planetary/apod', {
       params: {
@@ -25,7 +25,7 @@ export const MediaOfDay = async (): Promise<IMediaData> => {
   }
 }
 
-export const MediaGallery = async (count = 10): Promise<IMediaData[]> => {
+export const fetchMediaGallery = async (count = 10): Promise<IMediaData[]> => {
   try {
     const { data } = await axiosInstance.get('/planetary/apod', {
       params: {

@@ -1,16 +1,34 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import MainPage from '@/pages/MainPage.vue'
+import AsteroidOfTheDayPage from '@/pages/AsteroidOfTheDayPage.vue'
+import WelcomePage from '@/pages/WelcomePage.vue'
+import TopicsGridPage from '@/pages/TopicsGridPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'main',
-    component: MainPage
+    component: WelcomePage
+  },
+  {
+    path: '/asteroid-of-the-day',
+    name: 'asteroid-of-the-day',
+    component: AsteroidOfTheDayPage,
+    meta: {
+      layout: 'ConstrainedLayout'
+    }
+  },
+  {
+    path: '/topics',
+    name: 'topics',
+    component: TopicsGridPage,
+    meta: {
+      layout: 'ConstrainedLayout'
+    }
   }
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory('/'),
   routes
 })
 
